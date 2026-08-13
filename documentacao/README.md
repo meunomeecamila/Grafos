@@ -105,36 +105,91 @@ A seguir, temos alguns exemplos de prós e contras de cada uma.
 | **Lista de Adjacência** | • União e inclusão de vértices é comum<br>• Bom para grafos esparsos (ou nulos)<br>• Boa para pesquisar, remover e incluir vértices<br>• Melhor para fusão de vértices | • Ruim para grafos completos<br>• Para pesos, tem que fazer um objeto<br>• Custo adicional de ponteiro<br>• Ruim para pesquisar, remover e incluir arestas |
 | **Matriz de Adjacência** | • Boa para grafos completos<br>• Bom para pesquisar, remover e incluir arestas<br>• Fácil de representar grafos direcionados, pesos, labels | • Ruim para grafos nulos ou esparsos (espaço atoa)<br>• Ruim para pesquisar, remover e incluir vértices (caso matriz não tenha espaço para aumentar, seria necessário realocar)<br>• Ruim para fusão de vértices |
 
-obs: Fusão de vértices
+**Obs:** Fusão de vértices  
+É quando temos dois vértices diferentes com suas arestas próprias e queremos representar todas as suas relações em um novo vértice. Isso é mais fácil de ser feito em listas de adjacência, uma vez que apenas criamos um novo vértice e representamos as relações dos anteriores.   
+Para uma matriz, a inclusão e remoção de vértices é difícil pois requer manipulação do espaço da matriz, e muitas vezes realocação.   
+
 
 Matrizes podem auxiliar na representação de outras características dos grafos, podendo
 ser de vários tipos: 
-- Booleana (representar true se tiver aresta e false se não tiver aresta entre 2 vértices)
-- Inteira (podendo representar quantidade de arestas paralelas ou pesos)
-- String (podendo representar labels)
+* **Matriz Booleana (`boolean[][]`):** Indicada para grafos simples e não ponderados. Armazena `true` se existe uma aresta conectando dois vértices e `false` caso contrário.
+```java
+// 1. Construtor para Matriz Booleana (Presença/Ausência de Aresta)
+public class GrafoBooleano {
+    private int numVertices;
+    private boolean[][] matriz;
+
+    public GrafoBooleano(int numVertices) {
+        this.numVertices = numVertices;
+        // Inicializa matriz numVertices x numVertices (em Java, o valor padrão é false)
+        this.matriz = new boolean[numVertices][numVertices];
+    }
+}
+```
+
+* **Matriz Inteira (`int[][]`):** Utilizada para representar o peso das arestas (grafos ponderados) ou a quantidade de arestas paralelas (múltiplas) existentes entre os vértices.
+
+```java
+// 2. Construtor para Matriz Inteira (Pesos ou Arestas Paralelas)
+public class GrafoInteiro {
+    private int numVertices;
+    private int[][] matriz;
+
+    public GrafoInteiro(int numVertices) {
+        this.numVertices = numVertices;
+        // Inicializa matriz numVertices x numVertices (em Java, o valor padrão é 0)
+        this.matriz = new int[numVertices][numVertices];
+    }
+}
+```
+* **Matriz de Texto (`String[][]`):** Ideal para atribuir *labels*, rotular conexões ou registrar atributos textuais específicos associados a cada aresta.
+
+```java
+// 3. Construtor para Matriz de String (Labels e Atributos Textuais)
+public class GrafoString {
+    private int numVertices;
+    private String[][] matriz;
+
+    public GrafoString(int numVertices) {
+        this.numVertices = numVertices;
+        // Inicializa matriz numVertices x numVertices (em Java, os elementos iniciam como null)
+        this.matriz = new String[numVertices][numVertices];
+    }
+}
+```
+
+---
 
 ## Grau
 
-O grau de um vértice pe definido por quantas arestas estão conectadas a ele. 
+O grau de um vértice é definido por quantas arestas estão conectadas a ele.    
 Para grafos direcionados, existe grau de entrada e de saída. 
+A quantidade de graus de entrada e saída é sempre igual, uma vez que se entra em um vértice, obrigatoriamente sai em outro. Isso implica que a soma dos dois sempre será par, assim como o grau total de grafos não-direcionados.   
+
+---
 
 ## Conectividade 
 
 Grafos conexos são grafos nos quais é possível chegar de b até c mesmo sem ter uma aresta entre eles. Se há uma sequência de vértice-aresta-vértice... entre dois vértices quaisquer, 
 há um caminho entre eles. 
 
-Obs: Para ser conexo, todos devem estar ligados de alguma forma, mas não é necessário
-ter todas as conexões. 
+**Obs:** Para ser considerado um grafo conexo, todos os vértices devem estar ligados de alguma forma, mas não é necessário ter todas as conexões possíveis. 
 
-Um caminho apenas é válido se o primeiro vértice de P(a,b) for o primeiro do caminho e o último vértice for o último do caminho. Caminhos são considerados simples se não há repetição dos vértices, a não ser a origem. 
+Um *caminho* apenas é válido se o primeiro vértice de P(a,b) for o primeiro do caminho e o último vértice for o último do caminho. Caminhos são considerados simples se não há repetição dos vértices, a não ser a origem.    
 
-Caminhos que saem de um vértice e chegam nele mesmo são chamados de ciclos. 
-Para ser considerado um ciclo, o número de arestas percorridas deve ser maior que zero. 
-Logo, loops são ciclos. 
+- Caminho simples: P(a,b) = {a,c,d,b}   
+- Caminho não-simples: P(a,b) = {a,c,a,c,d,b} -> há repetição!
 
-Um caminho que contém ciclos não é um caminho simples, porque para formar um ciclo necessariamente algum vértice é repetido. 
+Caminhos que saem de um vértice e chegam nele mesmo são chamados de *ciclos*.    
+Para ser considerado um ciclo, o número de arestas percorridas deve ser maior que zero.    
+Logo, loops são ciclos (na notação do nosso professor).    
 
-## Subgrafos
-Subgrafos são partes de um grafo, onde seus vértices e arestas estão contidos no grafo inicial. O próprio grafo e o conjunto vazio são considerados subgrafos dele mesmo. 
+Um caminho que contém ciclos não é um caminho simples, porque para formar um ciclo necessariamente algum vértice é repetido.    
 
-Componentes conexos são subgrafos conexos que possuem o maior número de vértices e arestas mantendo a conectividade. Um grafo pode ter vários componentes conexos. 
+---
+
+## Subgrafos e Componentes Conexos
+*Subgrafos* são partes de um grafo, onde seus vértices e arestas estão contidos no grafo inicial. O próprio grafo e o conjunto vazio são considerados subgrafos dele mesmo.   
+Para ser subgrafo, não podemos ter arestas sem conectar com vértices!    
+
+*Componentes conexos* são subgrafos conexos que possuem o maior número de vértices e arestas mantendo a conectividade. Um grafo pode ter vários componentes conexos.    
