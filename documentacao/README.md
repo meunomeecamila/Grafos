@@ -44,7 +44,7 @@ Grafos podem ser direcionados ou não.
 Para grafos direcionados, a direção das arestas importa e usamos parêntesis na sua representação.   
 Para grafos não-direcionados, a direção e ordem dos elementos não faz diferença. Para eles, representamos usando chaves.    
 
-<img src="images/img_04.jpeg" width="850">
+<img src="images/img_04.jpeg" width="600">
 
 Obs: Em grafos direcionados, (a,b) é diferente de (b,a) porque a apontar pra b e b apontar pra a não são a mesma coisa.   
 
@@ -68,14 +68,14 @@ Grafos podem ser densos ou esparsos.
 Grafos densos possuem muitas arestas, sendo mais próximos do grafo completo.     
 Grafos esparsos possuem poucas, sendo mais próximos do grafo nulo.
 
-<img src="images/img_06.jpeg" width="700">
+<img src="images/img_06.jpeg" width="600">
 
 ---
 
 ## Pesos
 Além de vértices e arestas, grafos também podem ter pesos. 
 
-<img src="images/img_05.jpeg" width="700">
+<img src="images/img_05.jpeg" width="600">
 
 ### Pesos em arestas
 G = (V,E)   
@@ -100,7 +100,7 @@ Podemos ter um grafo com peso ponderado em arestas e vértices (G, W, Wlinha).
 No código, os vértices são armazenados em forma de uma lista sequencial, que pode começar de 0 ou 1. Logo, se tivermos 5 vértices, eles poderão ser uma lista de {0,1,2,3,4} ou de {1,2,3,4,5}.    
 Para as arestas, temos duas formas de armazenamento:     
 
-<img src="images/img_07.jpeg" width="700">
+<img src="images/img_07.jpeg" width="600">
 
 ### Matriz de Adjacência: 
 Matriz de arestas [1,n] x [1,n]. É sempre uma matriz quadrada de n colunas e n linhas, sendo
@@ -123,7 +123,7 @@ A seguir, temos alguns exemplos de prós e contras de cada uma.
 É quando temos dois vértices diferentes com suas arestas próprias e queremos representar todas as suas relações em um novo vértice. Isso é mais fácil de ser feito em listas de adjacência, uma vez que apenas criamos um novo vértice e representamos as relações dos anteriores.   
 Para uma matriz, a inclusão e remoção de vértices é difícil pois requer manipulação do espaço da matriz, e muitas vezes realocação. 
 
-<img src="images/img_08.jpeg" width="850">
+<img src="images/img_08.jpeg" width="60">
 
 
 Matrizes podem auxiliar na representação de outras características dos grafos, podendo
@@ -193,7 +193,7 @@ há um caminho entre eles.
 
 **Obs:** Para ser considerado um grafo conexo, todos os vértices devem estar ligados de alguma forma, mas não é necessário ter todas as conexões possíveis. 
 
-<img src="images/img_10.jpeg" width="800">
+<img src="images/img_10.jpeg" width="700">
 
 Um *caminho* apenas é válido se o primeiro vértice de P(a,b) for o primeiro do caminho e o último vértice for o último do caminho. Caminhos são considerados simples se não há repetição dos vértices, a não ser a origem.    
 
@@ -216,4 +216,4 @@ Para ser subgrafo, não podemos ter arestas sem conectar com vértices!
 
 *Componentes conexos* são subgrafos conexos que possuem o maior número de vértices e arestas mantendo a conectividade. Um grafo pode ter vários componentes conexos.    
 
-<img src="images/img_12.jpeg" width="800">
+<img src="images/img_12.jpeg" width="700">
