@@ -1,9 +1,9 @@
-# Grafos
+# 🕸️ Grafos
 
 ## Observações 
 - A definição utilizada nesse documento é a do professor Silvio.
 
-## Definição
+## ⚠️ Definição
 > Grafos são conjuntos de vértices V e arestas E (edges).    
 > Por definição, um grafo G = (V,E), onde V não pode ser 0, mas E sim.
 
@@ -39,7 +39,7 @@ está contido (ou é subconjunto) de A. Isso significa que mesmo que um grafo te
 
 ---
 
-## Direcionado vs Não-direcionado
+## ➡️ Direcionado vs Não-direcionado
 Grafos podem ser direcionados ou não.    
 Para grafos direcionados, a direção das arestas importa e usamos parêntesis na sua representação.   
 Para grafos não-direcionados, a direção e ordem dos elementos não faz diferença. Para eles, representamos usando chaves.    
@@ -72,7 +72,7 @@ Grafos esparsos possuem poucas, sendo mais próximos do grafo nulo.
 
 ---
 
-## Pesos
+## 🏋️ Pesos
 Além de vértices e arestas, grafos também podem ter pesos. 
 
 <img src="images/img_05.jpeg" width="600">
@@ -96,7 +96,7 @@ Podemos ter um grafo com peso ponderado em arestas e vértices (G, W, Wlinha).
 
 ---
 
-## Armazenamento de grafos
+## 📦 Armazenamento de grafos
 No código, os vértices são armazenados em forma de uma lista sequencial, que pode começar de 0 ou 1. Logo, se tivermos 5 vértices, eles poderão ser uma lista de {0,1,2,3,4} ou de {1,2,3,4,5}.    
 Para as arestas, temos duas formas de armazenamento:     
 
@@ -176,7 +176,7 @@ public class GrafoString {
 
 ---
 
-## Grau
+## 🌡️ Grau
 
 O grau de um vértice é definido por quantas arestas estão conectadas a ele.    
 Para grafos direcionados, existe grau de entrada e de saída. 
