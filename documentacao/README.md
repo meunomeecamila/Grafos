@@ -17,6 +17,8 @@ public GrafoMatriz(int quantidadeVertices) {
 }
 ```
 
+<img src="images/img_01.jpeg" width="700">
+
 ---
 
 ## Conceitos básicos 
@@ -44,7 +46,7 @@ Para calcular a cardinalidade das arestas, fazemos assim:
 - Direcionado: 0 <= |E| <= 2x fórmula    
 - Não-direcionado: 0 <= |E| <= fórmula   
 
-A fórmula pode ser n! / p!(n-p)! ou n(n-1)/2 (combinação de elementos 2 a 2)   
+A fórmula pode ser n! / p!(n-p)! ou n(n-1)/2 (combinação de elementos 2 a 2), sendo n a quantidade de vértices.     
 No direcionado, a fórmula é multiplicada por 2 pois nesse grafo a ordem dos elementos importa (a setinha possui dois sentidos). No não-direcionado, apenas uma aresta conecta os dois sentidos de um vértice.    
 
 Matematicamente falando:   
@@ -177,8 +179,8 @@ há um caminho entre eles.
 
 Um *caminho* apenas é válido se o primeiro vértice de P(a,b) for o primeiro do caminho e o último vértice for o último do caminho. Caminhos são considerados simples se não há repetição dos vértices, a não ser a origem.    
 
-- Caminho simples: P(a,b) = {a,c,d,b}   
-- Caminho não-simples: P(a,b) = {a,c,a,c,d,b} -> há repetição!
+- Caminho simples: P(b,c) = {b,a,f,c}   
+- Caminho não-simples: P(b,c) = {b,a,d,a,f,c} -> há repetição!
 
 Caminhos que saem de um vértice e chegam nele mesmo são chamados de *ciclos*.    
 Para ser considerado um ciclo, o número de arestas percorridas deve ser maior que zero.    
