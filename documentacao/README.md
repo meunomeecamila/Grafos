@@ -51,3 +51,45 @@ Funcionam da mesma forma, porém W:V -> R
 
 Os pesos podem significar várias coisas, como nome do vértice, nome da aresta (como em ruas).
 Podemos ter um grafo com peso ponderado em arestas e vértices (G, W, Wlinha). 
+
+## Armazenamento de grafos
+No código, temos duas formas de armazenar grafos: 
+
+Matriz de Adjacência: 
+Matriz de arestas [1,n] x [1,n]. É sempre uma matriz quadrada de n colunas e n linhas, sendo
+n a quantidade de vértices. 
+
+Lista de Adjacência: 
+Arestas formam listas vaseadas nos vértices que indicam as relações. 
+
+Obs: ADJACENTES são vizinhos. 
+
+Prós de Lista de Adjacência: 
+- União e inclusão de vértices é comum 
+- Bom para grafos esparsos (ou nulos)
+- Boa para pesquisar, remover e incluir vértices 
+- Melhor para fusão de vértices
+
+Contras da Lista de Adjacência: 
+- Ruim para grafos completos 
+- Para pesos, tem que fazer um objeto
+- Custo adicional de ponteiro 
+- Ruim para pesquisar, remover e incluir arestas
+
+Prós de Matriz de Adjacência 
+- Boa para grafos completos 
+- Bom para pesquisar, remover e incluir arestas
+- Fácil de representar grafos direcionados, pesos, labels
+
+Contras de Matriz de Adjacência 
+- Ruim para grafos nulos ou esparsos (espaço atoa)
+- Ruim para pesquisar, remover e incluir vértices (caso matriz não tenha espaço para aumentar, seria necessário realocar)
+- Ruim para fusão de vértices
+
+obs: Fusão de vértices
+
+Matrizes podem auxiliar na representação de outras características dos grafos, podendo
+ser de vários tipos: 
+- Booleana (representar true se tiver aresta e false se não tiver aresta entre 2 vértices)
+- Inteira (podendo representar quantidade de arestas paralelas ou pesos)
+- String (podendo representar labels)
