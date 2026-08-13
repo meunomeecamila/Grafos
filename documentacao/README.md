@@ -30,12 +30,12 @@ public GrafoMatriz(int quantidadeVertices) {
 - Grafos simples são aqueles que não possuem loops e nem arestas paralelas
 - Grafos completos são aqueles que possuem todas as relações possíveis entre vértices e arestas. Por definição, eles também devem ser simples.   
 
-<img src="images/img_02.jpeg" width="700">
+<img src="images/img_02.jpeg" width="1000">
 
 Dois grafos A e B são considerados iguais se A está contido (ou é subconjunto) de B e B 
 está contido (ou é subconjunto) de A. Isso significa que mesmo que um grafo tenha arestas paralelas e outro não, eles são considerados iguais. Os dois subconjuntos têm a mesma cardinalidade de vértices, mesmo tendo quantidade de elementos diferentes. 
 
-<img src="images/img_03.jpeg" width="400">
+<img src="images/img_03.jpeg" width="700">
 
 ---
 
