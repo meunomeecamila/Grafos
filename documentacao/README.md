@@ -93,3 +93,29 @@ ser de vários tipos:
 - Booleana (representar true se tiver aresta e false se não tiver aresta entre 2 vértices)
 - Inteira (podendo representar quantidade de arestas paralelas ou pesos)
 - String (podendo representar labels)
+
+## Grau
+
+O grau de um vértice pe definido por quantas arestas estão conectadas a ele. 
+Para grafos direcionados, existe grau de entrada e de saída. 
+
+## Conectividade 
+
+Grafos conexos são grafos nos quais é possível chegar de b até c mesmo sem ter uma aresta entre eles. Se há uma sequência de vértice-aresta-vértice... entre dois vértices quaisquer, 
+há um caminho entre eles. 
+
+Obs: Para ser conexo, todos devem estar ligados de alguma forma, mas não é necessário
+ter todas as conexões. 
+
+Um caminho apenas é válido se o primeiro vértice de P(a,b) for o primeiro do caminho e o último vértice for o último do caminho. Caminhos são considerados simples se não há repetição dos vértices, a não ser a origem. 
+
+Caminhos que saem de um vértice e chegam nele mesmo são chamados de ciclos. 
+Para ser considerado um ciclo, o número de arestas percorridas deve ser maior que zero. 
+Logo, loops são ciclos. 
+
+Um caminho que contém ciclos não é um caminho simples, porque para formar um ciclo necessariamente algum vértice é repetido. 
+
+## Subgrafos
+Subgrafos são partes de um grafo, onde seus vértices e arestas estão contidos no grafo inicial. O próprio grafo e o conjunto vazio são considerados subgrafos dele mesmo. 
+
+Componentes conexos são subgrafos conexos que possuem o maior número de vértices e arestas mantendo a conectividade. Um grafo pode ter vários componentes conexos. 
