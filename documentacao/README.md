@@ -226,7 +226,7 @@ Um conjunto de vértices que é atingido a partir de um vértice u marcado é ch
 Um conjunto de vértices que atinge um determinado vértice u é chamado de *fecho transitivo*
 *inverso*.    
 
-<img src="images/img_13.jpeg" width="700">
+<img src="images/img_13.jpg" width="700">
 
 Para grafos não-direcionados, o fecho transitivo direto seriam todas as arestas (componente conexo do meu grafo). Em nossa definição, consideramos que o fecho transitivo direto possui o próprio vértice, uma vez que fechos transitivos são um conjunto de caminhos e existem caminhos com a mesma origem e destino.   
 
@@ -240,7 +240,7 @@ Isso se deve a existência de caminhos triviais.
 
 Um grafo de um vértice apenas tem como fecho transitivo direto ele mesmo na pior das hipóteses, o que também implica que esse vértice é um componente conexo.    
 
-<img src="images/img_14.jpeg" width="700">
+<img src="images/img_14.jpg" width="700">
 
 ### Tamanho dos caminhos
 O tamanho dos caminhos pode ser dado a partir da contagem de vértices ou arestas, dependendo
@@ -252,4 +252,4 @@ por vértice (há apenas um vértice).
 **Obs:** Quando falamos de caminho, agora, estamos falando de caminhos simples (não há repetição de vértices). Logo, no exemplo abaixo, há apenas um caminho (simples) para chegar 
 do vértice a ao vértice f, e ele será obrigatoriamente o escolhido.  
 
-<img src="images/img_15.jpeg" width="500">
+<img src="images/img_15.jpg" width="500">
