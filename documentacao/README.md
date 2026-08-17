@@ -217,3 +217,39 @@ Para ser subgrafo, não podemos ter arestas sem conectar com vértices!
 *Componentes conexos* são subgrafos conexos que possuem o maior número de vértices e arestas mantendo a conectividade. Um grafo pode ter vários componentes conexos.    
 
 <img src="images/img_12.jpeg" width="700">
+
+---
+
+## 🔒 Fechos transitivos
+Um conjunto de vértices que é atingido a partir de um vértice u marcado é chamado de *fecho*
+*transitivo direto*.   
+Um conjunto de vértices que atinge um determinado vértice u é chamado de *fecho transitivo*
+*inverso*.    
+
+<img src="images/img_13.jpeg" width="700">
+
+Para grafos não-direcionados, o fecho transitivo direto seriam todas as arestas (componente conexo do meu grafo). Em nossa definição, consideramos que o fecho transitivo direto possui o próprio vértice, uma vez que fechos transitivos são um conjunto de caminhos e existem caminhos com a mesma origem e destino.   
+
+**Obs:** Caminhos são sequências de vértices e arestas. Porém, existem caminhos como P(b,b) que 
+não necessariamente tem arestas. Esses são chamados de **caminhos triviais**. 
+
+> A existência de uma aresta implica na existência de um caminho. 
+> Porém, a existência de um caminho não implica na existência de uma aresta. 
+
+Isso se deve a existência de caminhos triviais.   
+
+Um grafo de um vértice apenas tem como fecho transitivo direto ele mesmo na pior das hipóteses, o que também implica que esse vértice é um componente conexo.    
+
+<img src="images/img_14.jpeg" width="700">
+
+### Tamanho dos caminhos
+O tamanho dos caminhos pode ser dado a partir da contagem de vértices ou arestas, dependendo
+da definição usada pelo livro ou autor.   
+
+Para caminhos triviais, o tamanho é 0 se contado por aresta (não há arestas), mas é 1 se contado
+por vértice (há apenas um vértice).
+
+**Obs:** Quando falamos de caminho, agora, estamos falando de caminhos simples (não há repetição de vértices). Logo, no exemplo abaixo, há apenas um caminho (simples) para chegar 
+do vértice a ao vértice f, e ele será obrigatoriamente o escolhido.  
+
+<img src="images/img_15.jpeg" width="500">
