@@ -252,4 +252,4 @@ por vértice (há apenas um vértice).
 **Obs:** Quando falamos de caminho, agora, estamos falando de caminhos simples (não há repetição de vértices). Logo, no exemplo abaixo, há apenas um caminho (simples) para chegar 
 do vértice a ao vértice f, e ele será obrigatoriamente o escolhido.  
 
-<img src="images/img_15.jpg" width="500">
+<img src="images/img_15.jpg" width="600">
