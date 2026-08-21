@@ -256,7 +256,7 @@ do vértice a ao vértice f, e ele será obrigatoriamente o escolhido.
 
 ---
 
-## Classificação das arestas
+## 📝 Classificação das arestas
 
 As arestas de um grafo podem ser classificadas como árvores, cruzamentos, avanços ou retornos.      
 Consideramos que:      
@@ -288,7 +288,7 @@ Mas, o que é o **tempo das arestas**? É o que veremos abaixo.
 
 ---
 
-## Tempos de arestas
+## ⏱️ Tempos de arestas
 
 Temos uma forma de contar tempos em grafos, contando um "segundo" para cada ação.      
 Esses tempos têm relação com a classificação das arestas.      
