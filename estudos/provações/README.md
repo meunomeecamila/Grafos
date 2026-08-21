@@ -10,7 +10,9 @@ Aqui, estão listados os principais deles:
 06- Seja G=(V,E) um grafo não-direcionado completo. Encontre o número de subgrafos que podem ser encontrados em G.   
 07- Seja G=(V,E) um grafo direcionado. Projete um algoritmo para encontrar todos os vértices que podem ser ATINGIDOS a partir de u (Fecho transitivo direto).   
 08- Seja G=(V,E) um grafo direcionado. Projete um algoritmo para encontrar todos os vértices que atingem u (Fecho transitivo inverso).   
-09- Seja G=(V,E) um grafo direcionado. Projete uma solução para dizer se há ciclo em G.   
+09- Seja G=(V,E) um grafo direcionado. Projete uma solução para dizer se há ciclo em G. 
+10- Contabilize o número de componentes conexos de un grafo através de busca (largura ou profundidade)
+11- Faça um algoritmo que mostre todo mundo que alcança determinado vértice (fecho transitivo direto).  
 
 # Exercícios
 

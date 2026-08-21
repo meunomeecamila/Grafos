@@ -253,3 +253,71 @@ por vértice (há apenas um vértice).
 do vértice a ao vértice f, e ele será obrigatoriamente o escolhido.  
 
 <img src="images/img_15.jpg" width="600">
+
+---
+
+## Classificação das arestas
+
+As arestas de um grafo podem ser classificadas como árvores, cruzamentos, avanços ou retornos.      
+Consideramos que:      
+      
+- 0 = não iniciou a visitação
+- 1 = iniciou mas não terminou   
+- 2 = terminou   
+
+Podemos percorrê-los assim:   
+- 1 -> 0: chamamos a aresta de árvore 
+- 1 -> 2: chamamos ou de avanço ou de cruzamento 
+- 1 -> 1: chamamos de retorno (ciclo)
+
+A aresta é chamada de **árvore** quando um vértice é descoberto pela primeira vez.  
+A aresta é denominada **avanço** quando já foi descoberta por outro vértice mas agora está sendo descoberta por um de seus ancestrais.    
+A aresta é denominada **cruzamento** quando já foi descoberta por outro vértice mas agora está sendo descoberta por um vértice que não é um de seus ancestrais.   
+A aresta se chama **retorno** quando forma um ciclo.
+
+<img src="images/img_16.jpg" width="800">
+
+No exemplo acima, as arestas ab, ad, nc, ne, cf e fg são chamadas de **árvores** pois são descobertas pela primeira vez.     
+A aresta gb é de **retorno** pois forma um ciclo b,e,g,b.     
+As arestas df, eg e hf são de **cruzamento** pois alcançam vértices já descobertos anteriormente por outros ancestrais. Por exemplo: a aresta hf é de cruzamento pois o vértice f foi descoberto anteriormente por c, sendo seus ancestrais: a,b,c. O vértice h não é um de seus ancestrais, formando assim o cruzamento. O mesmo acontece com a aresta eg, pois o vértice g foi previamente descoberto por f, sendo seus ancestrais: a,b,c,f. O vértice e não é um de seus ancestrais, formando assim outro cruzamento.    
+Por fim, temos a aresta ac como de avanço. Essa aresta é um avanço pois c foi descoberto antes por b, sendo seus ancestrais a e b. Agora, a está tentando descobrir c. Como a é um de seus ancestrais, consideramos um avanço. Se a não fosse, seria um cruzamento. 
+
+**Obs:** É importante ressaltar que a classificação das arestas não é *fixa*, dependendo assim da ordem que percorremos, como no exemplo acima, a alfabética. Caso a ordem mudasse, a classificação e tempo das arestas mudaria também.   
+
+Mas, o que é o **tempo das arestas**? É o que veremos abaixo.   
+
+---
+
+## Tempos de arestas
+
+Temos uma forma de contar tempos em grafos, contando um "segundo" para cada ação.      
+Esses tempos têm relação com a classificação das arestas.      
+As arestas árvore e avanço estão dentro estão dentro do subconjunto do seu intervalo inicial, sendo subintervalos. Logo, estão no fecho transitivo direto e são alcançadas.      
+Quando é cruzamento, não faz parte do conjunto.      
+
+Com isso em mente, podemos fazer:
+-> Busca por profundidade 
+-> Busca por lagura
+
+### Conceito de descendentes e ancestrais 
+Arestas podem ter descendentes e ancestrais. Uma aresta u é **ancestral** de v quando u alcança v. Uma aresta v é **descendente** de u quando é alcançada por u. 
+
+**Buscas** são formas sistemáticas de percorrer o vértice.   
+Por enquanto, vimos duas: 
+
+### Busca em largura
+Se parece com uma pilha. Está relacionada à distância de vértices para um vértice inicial. 
+
+### Busca em profundidade
+Se parece com uma fila. Está relacionada à existência de um caminho de um vértice inicial até determinados vértices.   
+Normalmente, fazemos a busca em profundidade com base na lista encadeada.   
+Em árvores, buscas pré-ordem, pós-ordem e central são buscas em profundidade.    
+
+Em muitos casos, tanto a busca em largura quanto a em profundidade chegarão no mesmo resultado, dependendo do grafo.   
+Para acharmos componentes conexos e fechos transitivos diretos, por exemplo, podemos usar qualquer uma das duas.   
+
+<img src="images/img_17.jpg" width="800">
+
+---
+
+
