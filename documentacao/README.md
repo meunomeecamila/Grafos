@@ -275,7 +275,7 @@ A aresta é denominada **avanço** quando já foi descoberta por outro vértice 
 A aresta é denominada **cruzamento** quando já foi descoberta por outro vértice mas agora está sendo descoberta por um vértice que não é um de seus ancestrais.   
 A aresta se chama **retorno** quando forma um ciclo.
 
-<img src="images/img_16.jpg" width="800">
+<img src="images/img_16.jpeg" width="800">
 
 No exemplo acima, as arestas ab, ad, nc, ne, cf e fg são chamadas de **árvores** pois são descobertas pela primeira vez.     
 A aresta gb é de **retorno** pois forma um ciclo b,e,g,b.     
@@ -316,7 +316,7 @@ Em árvores, buscas pré-ordem, pós-ordem e central são buscas em profundidade
 Em muitos casos, tanto a busca em largura quanto a em profundidade chegarão no mesmo resultado, dependendo do grafo.   
 Para acharmos componentes conexos e fechos transitivos diretos, por exemplo, podemos usar qualquer uma das duas.   
 
-<img src="images/img_17.jpg" width="800">
+<img src="images/img_17.jpeg" width="800">
 
 ---
 
