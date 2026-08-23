@@ -23,6 +23,10 @@ sentido de seta. */
 //---------------------------------------------------------
 
 //? Criar matriz
+
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class GrafoMatriz {
 
     private int[][] matriz; //nesse caso, colocamos int e não boolean pois podemos fazer
@@ -308,8 +312,131 @@ public boolean ehCompleto(boolean direcionado) {
 
 //!obs: essa função não está otimizada pois acaba fazendo exatamente a mesma verificação nos dois casos.
 
+//? Busca em largura (BFS)
 
+//A busca em largura se parece com uma fila, percorrendo o grafo
+// em níveis. Primeiro, visitamos os vértices mais próximos (que tem distância de uma aresta),
+// e depois os mais distantes. 
 
+//É importante estabelecer um vértice inicial. 
+
+//Como estamos usando uma matriz de adjacência,
+//para encontrar os vizinhos de um vértice basta
+//percorrer sua linha na matriz.
+//
+//matriz[atual][i] > 0 significa que existe uma
+//aresta de atual para i.
+
+//A BFS segue essa lógica:
+/*
+1. Descubro um vértice.
+2. Coloco ele na fila.
+3. Retiro o primeiro da fila.
+4. Analiso seus vizinhos.
+5. Os vizinhos novos vão para o final da fila.
+6. Repito.
+*/
+
+public void buscaLargura(int inicio) {
+
+    //verifica se o vértice inicial existe.
+    if (!verticeValido(inicio)) {
+        throw new IllegalArgumentException("Vértice inválido.");
+    }
+
+    //Vetor de booleans -> controla quais vértices já foram visitados.
+    boolean[] visitado = new boolean[quantidadeVertices];
+
+    //A fila será utilizada para controlar a ordem
+    //em que os vértices serão visitados.
+    Queue<Integer> fila = new LinkedList<>();
+
+    //Começamos pelo vértice inicial.
+    fila.add(inicio); //adiciona na fila
+    visitado[inicio] = true; //muda o booleano
+
+    //Enquanto ainda houver vértices na fila...
+    while (!fila.isEmpty()) {
+
+        //Retira o primeiro vértice da fila.
+        int atual = fila.remove();
+
+        System.out.print(atual + " ");
+
+        //Percorre todos os possíveis vizinhos de atual.
+        int n = quantidadeVertices;
+        for (int i = 0; i < n; i++) {
+
+            //matriz[atual][i] > 0 -> existe pelo menos uma aresta do vértice atual para o que estamos
+            //!visitado[i] -> esse vértice que estamos ainda não foi visitado
+
+            if (matriz[atual][i] > 0 && !visitado[i]) {
+
+                //Marcamos i como visitado.
+                visitado[i] = true;
+
+                //Colocamos i no final da fila.
+                fila.add(i);
+            }
+        } //esse for acaba a cada linha, indicando que terminamos de percorrer as arestas de algum vértice
+    }
+}
+
+//? Busca em profundidade (DFS)
+
+//A busca em profundidade tenta seguir um caminho
+//até o mais longe possível antes de voltar.
+//
+//A DFS utiliza uma PILHA.
+//
+//Na implementação abaixo, usamos RECURSÃO.
+//A própria chamada recursiva funciona como uma pilha.
+
+//A ideia é: 
+/*Escolher um vizinho não visitado e ir para ele. Depois, escolher um vizinho desse novo vértice e continuar indo. Só voltamos quando não houver mais para onde ir.*/
+
+private void buscaProfundidade(int atual, boolean[] visitado) {
+
+    //Marcamos o vértice atual como visitado.
+    visitado[atual] = true;
+
+    System.out.print(atual + " ");
+
+    //Percorremos todos os possíveis vizinhos de atual.
+    for (int i = 0; i < quantidadeVertices; i++) {
+
+        //Se existe uma aresta de atual para i
+        //e i ainda não foi visitado...
+        if (matriz[atual][i] > 0 && !visitado[i]) {
+
+            //Chamamos a DFS para i.
+            //
+            //A função vai continuar avançando pelo grafo
+            //antes de voltar para este ponto.
+            buscaProfundidade(i, visitado); //chama a propria função (pilha)
+        }
+    }
+}
+
+//Método auxiliar para iniciar a DFS.
+//
+//Ele existe apenas para não precisarmos criar o vetor
+//de visitados manualmente toda vez que quisermos fazer
+//uma busca.
+
+public void buscaProfundidade(int inicio) {
+
+    //Verifica se o vértice inicial existe.
+    if (!verticeValido(inicio)) {
+        throw new IllegalArgumentException("Vértice inválido.");
+    }
+
+    //Cria o vetor que controla os vértices visitados.
+    boolean[] visitado = new boolean[quantidadeVertices];
+
+    //Começa a busca pelo vértice inicial.
+    buscaProfundidade(inicio, visitado);
+}
 
 
 
