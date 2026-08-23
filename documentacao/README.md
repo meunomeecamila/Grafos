@@ -302,14 +302,29 @@ Com isso em mente, podemos fazer:
 ### Conceito de descendentes e ancestrais 
 Arestas podem ter descendentes e ancestrais. Uma aresta u é **ancestral** de v quando u alcança v. Uma aresta v é **descendente** de u quando é alcançada por u. 
 
+Por exemplo:
+
+```text
+A → B → C
+```
+
+Nesse caso:
+
+- `A` é ancestral de `B` e `C`;
+- `B` é ancestral de `C`;
+- `B` é descendente de `A`;
+- `C` é descendente de `A` e `B`.
+
+## Buscas
+
 **Buscas** são formas sistemáticas de percorrer o vértice.   
 Por enquanto, vimos duas: 
 
 ### Busca em largura
-Se parece com uma pilha. Está relacionada à distância de vértices para um vértice inicial. 
+Se parece com uma fila. Está relacionada à distância de vértices para um vértice inicial. 
 
 ### Busca em profundidade
-Se parece com uma fila. Está relacionada à existência de um caminho de um vértice inicial até determinados vértices.   
+Se parece com uma pilha. Está relacionada à existência de um caminho de um vértice inicial até determinados vértices.   
 Normalmente, fazemos a busca em profundidade com base na lista encadeada.   
 Em árvores, buscas pré-ordem, pós-ordem e central são buscas em profundidade.    
 
