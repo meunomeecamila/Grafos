@@ -335,4 +335,134 @@ Para acharmos componentes conexos e fechos transitivos diretos, por exemplo, pod
 
 ---
 
+## Excentricidade
+
+A **excentricidade** de um vértice é dada pela maior distância desse vértice a outro.   
+Ela se difere de **caminho** pois de um vértice u a um vértice v podem existir vários caminhos. Dentre eles, o menor, é a excentricidade.   
+
+### Outros conceitos
+- Chamamos de **diâmetro** a maior excentricidade
+- Chamamos de **raio** a menor excentricidade
+- Chamamos de **centro** o(s) vértice(s) de valor raio
+
+**Obs:** muitas vezes, o raio será metade do diâmetro. Mas isso nem sempre acontece.   
+
+---
+
+## Árvores
+Chamamos de **árvore** os grafos que são conexos e acíclicos. Todos os grafos acíclicos formam uma **floresta**. Logo, toda árvore é uma floresta, mas nem toda floresta á uma árvore.  
+
+Em toda árvore, podemos afirmar que teremos vértices de grau um, porque não temos ciclos. 
+Logo, sempre teremos uma ponta. Chamamos essa ponta de **vértice pendente**. 
+
+Ao remover o vértice pendente, a excentricidade diminui.   
+- Excentricidade par -> número de vértices do caminho é ímpar -> quantidade de arestas é par -> quantidade de vértices é ímpar = um centro
+- Excentricidade ímpar -> número de vértices do caminho é par -> quantidade de arestas é ímpar -> quantidade de vértices é par = dois centros 
+
+Todas as árvores possuem centros com no MÁXIMO dois vértices.   
+Em árvores, não existe ambiguidade de caminhos, havendo apenas um caminho(u,v). 
+
+**Obs:** Em grafos, para sairmos de uma folha e chegarmos em outra, não precisamos necessariamente passar pelo centro. 
+
+### Raiz 
+Nem sempre existirá uma raiz em grafos.   
+A raiz apenas existe se existir um vértice que alcança todos os outros. Ou seja, que seu fecho transitivo direto possua todos os vértices do meu grafo. 
+
+--- 
+
+## Classificação de conectividade em grafos
+
+Podemos classificar os grafos quanto a sua conectividade. Sendo assim, temos 4 opções: 
+
+### Grafos fortemente conexos
+Se existe caminho de ida e de volta entre todos os vértices de um grafo, ele é considerado um grafo fortemente conexo. 
+Isso significa que existe path(u,v) e existe path(v,u) para quaisquer par de vértices. 
+
+### Grafos semi fortemente conexos
+Se existe caminho de ida, mas não de volta (ou de volta, mas não de ida) entre todos os vértices de um grafo, chamamos de semi fortemente conexo. 
+Isso significa que existe path(u,v) ou existe path(v,u) para quaisquer par de vértices. 
+
+### Grafos fracamente conexos
+Se for falso para as duas acima, removemos a direção do grafo, transformando-o em um grafo associado. Se ele for conexo no grafo associado, chamamos ele de fracamente conexo, ou simplesmente conexo. 
+
+### Grafos desconexos 
+Se mesmo no grafo associado (removendo a direção) o grafo ainda não apresentar conectividade, chamamos ele de grafo desconexo. Isso normalmente acontece para grafos nos quais possuímos vértices sozinhos. 
+
+**Obs:** Grafos associados são grafos é o grafo não direcionado que você obtém ao remover a direção de todas as arestas de um grafo direcionado. 
+
+**Obs 2:** Subgrafos de um grafo podem ser chamados de induzidos. Isso significa que ele contém as mesmas arestas que o grafo original, dado os vértices do subgrafo.  
+
+### Componentes conexos 
+
+Componentes conexos são subgrafos maximais fortemente conexos. Eles são partes de um grafo direcionado onde existe um caminho de ida e volta entre qualquer par de vértices, e que não podem ser ampliadas com novos vértices sem perder essa propriedade.   
+
+Componentes conexos são normalmente encontrados onde há ciclos.   
+Se o número de componentes fortemente conexos for igual ao número de vértices, não tem ciclo, e logo cada vértice é seu próprio componente.  
+
+---
+
+## Bases
+
+Uma base é um conjunto de vértices (podendo ser um só) que juntos alcançam todos os vértices do meu grafo. Isso significa que a união dos fechos transitivos diretos desse conjunto equivale ao total de vértices do meu grafo.   
+
+Para identificar uma base, é fácil! Podemos apenas retornar todos os vértices.   
+Fica um pouco mais difícil se quisermos identificar uma base de vértice com a menor quantidade possível.   
+
+### Para grafos acíclicos: 
+
+A base é formada por todos os vértices de grau de entrada = 0. Isso porque se nenhuma aresta chega nesse vértice, ele obrigatoriamente deve estar incluso na base, uma vez que o fecho transitivo direto de nenhum outro vértice conterá ele, apenas o dele mesmo. 
+
+Ex: 
+
+### Para grafos cíclicos: 
+
+Como apenas sabemos trabalhar com grafos acíclicos, devemos transformar os grafos cíclicos em acíclicos para podermos aplicar a mesma lógica.    
+Para isso, transformamos em um vértice cada componente fortemente conexo.   
+Assim, o grafo se torna acíclico e aí passamos a ter vértices com grau de entrada = 0.   
+Por fim, para montar a nossa base, basta analisar os "vértices" com grau de entrada zero e selecionar qualquer vértice desse componente. 
+
+**Passo a passo**
+1. Encontre componentes fortemente conexos 
+2. Fusione os vértices de um mesmo componente 
+3. Ache um novo grafo: conecte os vértices fundidos caso haja arestas entre vértices de dois componentes conexos diferentes. 
+4. Procure vértices de grau de entrada = 0
+5. Monte sua base com todos esses vértices. Caso um dos componentes tenha grau de entrada zero, inclua qualquer vértice desse componente. 
+
+**Obs:** Podemos incluir qualquer vértice do componente porque por serem ciclos, qualquer um dos vértices chega em todos os outros.
+
+### Outros conceitos
+- Grafos transpostos são aqueles em que alteramos todas as direções das arestas
+- Bases em grafos transpostos são chamadas de **antibase**. Isso significa que no grafo normal, eles possuem grau de saída = 0. 
+- Uma base com apenas um vértice é chamada de **raiz**. 
+- Uma antibase com apenas um vértice é chamada de **antiraiz**. 
+
+---
+
+## Ordenação Topológica
+
+A ordenação topológica é uma organização linear dos vértices de um grafo direcionado acíclico. 
+
+Ela consiste em numerar os vértices de um grafo direcionado acíclico, de forma que: 
+- Os números são iguais para um mesmo vértice
+- Em uma aresta (u,v), o número de u deve ser menor que o de v. 
+
+Primeiro, analisamos quem tem grau zero e numeramos com os menores valores (base).   
+Depois, removemos a base e passamos a numerar quem tem grau zero (nova base).   
+Essa operação se repete até que todos os vértices tenham sido numerados.   
+
+A **ordenação topológica** não é única. Nos nossos estudos, precisamos achar apenas uma delas, e não todas. A partir disso, conseguimos achar o tamanho e os vértices que constituem o maior caminho de um grafo.   
+
+Essa ordenação pode ser usada na vida real para várias coisas, dentre elas: 
+- Descobrir tarefas que podem ser feitas em paralelo 
+- Otimizar projetos ou saber a duração mínima deles 
+- Saber a ordem de precedência de uma grade curricular
+
+A **ordenação topológica** é sequencial, atuando apenas onde não tem ciclos. Em grupos com ações paralelas, a ordem dos vértices não importa. 
+
+--- 
+
+
+
+
+
 
