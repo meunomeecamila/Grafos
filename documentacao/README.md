@@ -366,7 +366,7 @@ Em árvores, não existe ambiguidade de caminhos, havendo apenas um caminho(u,v)
 
 **Obs:** Em grafos, para sairmos de uma folha e chegarmos em outra, não precisamos necessariamente passar pelo centro. 
 
-<img src="images/img_19.png" width="600">
+<img src="images/img_19.png" width="400">
 
 ### Raiz 
 Nem sempre existirá uma raiz em grafos.   
