@@ -315,7 +315,7 @@ Nesse caso:
 - `B` é descendente de `A`;
 - `C` é descendente de `A` e `B`.
 
-## Buscas
+## 🔎 Buscas
 
 **Buscas** são formas sistemáticas de percorrer o vértice.   
 Por enquanto, vimos duas: 
@@ -335,7 +335,7 @@ Para acharmos componentes conexos e fechos transitivos diretos, por exemplo, pod
 
 ---
 
-## Excentricidade
+## 🤪 Excentricidade
 
 A **excentricidade** de um vértice é dada pela maior distância desse vértice a outro.   
 Ela se difere de **caminho** pois de um vértice u a um vértice v podem existir vários caminhos. Dentre eles, o menor, é a excentricidade.   
@@ -351,7 +351,7 @@ Ela se difere de **caminho** pois de um vértice u a um vértice v podem existir
 
 ---
 
-## Árvores
+## 🌳 Árvores
 Chamamos de **árvore** os grafos que são conexos e acíclicos. Todos os grafos acíclicos formam uma **floresta**. Logo, toda árvore é uma floresta, mas nem toda floresta á uma árvore.  
 
 Em toda árvore, podemos afirmar que teremos vértices de grau um, porque não temos ciclos. 
@@ -366,7 +366,7 @@ Em árvores, não existe ambiguidade de caminhos, havendo apenas um caminho(u,v)
 
 **Obs:** Em grafos, para sairmos de uma folha e chegarmos em outra, não precisamos necessariamente passar pelo centro. 
 
-<img src="images/img_19.png" width="400">
+<img src="images/img_19.png" width="00">
 
 ### Raiz 
 Nem sempre existirá uma raiz em grafos.   
