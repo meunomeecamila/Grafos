@@ -382,18 +382,18 @@ Podemos classificar os grafos quanto a sua conectividade. Sendo assim, temos 4 o
 Se existe caminho de ida e de volta entre todos os vértices de um grafo, ele é considerado um grafo fortemente conexo. 
 Isso significa que existe path(u,v) e existe path(v,u) para quaisquer par de vértices. 
 
-<img src="images/img_20.png" width="500">
+<img src="images/img_20.png" width="300">
 
 ### Grafos semi fortemente conexos
 Se existe caminho de ida, mas não de volta (ou de volta, mas não de ida) entre todos os vértices de um grafo, chamamos de semi fortemente conexo. 
 Isso significa que existe path(u,v) ou existe path(v,u) para quaisquer par de vértices. 
 
-<img src="images/img_21.png" width="500">
+<img src="images/img_21.png" width="300">
 
 ### Grafos fracamente conexos
 Se for falso para as duas acima, removemos a direção do grafo, transformando-o em um grafo associado. Se ele for conexo no grafo associado, chamamos ele de fracamente conexo, ou simplesmente conexo. 
 
-<img src="images/img_22.png" width="500">
+<img src="images/img_22.png" width="600">
 
 ### Grafos desconexos 
 Se mesmo no grafo associado (removendo a direção) o grafo ainda não apresentar conectividade, chamamos ele de grafo desconexo. Isso normalmente acontece para grafos nos quais possuímos vértices sozinhos. 
@@ -402,7 +402,7 @@ Se mesmo no grafo associado (removendo a direção) o grafo ainda não apresenta
 
 **Obs 2:** Subgrafos de um grafo podem ser chamados de induzidos. Isso significa que ele contém as mesmas arestas que o grafo original, dado os vértices do subgrafo.  
 
-<img src="images/img_23.png" width="500">
+<img src="images/img_23.png" width="300">
 
 ### Componentes conexos 
 
@@ -422,7 +422,7 @@ Uma base é um conjunto de vértices (podendo ser um só) que juntos alcançam t
 Para identificar uma base, é fácil! Podemos apenas retornar todos os vértices.   
 Fica um pouco mais difícil se quisermos identificar uma base de vértice com a menor quantidade possível.   
 
-<img src="images/img_25.png" width="600">
+<img src="images/img_25.png" width="400">
 
 ### Para grafos acíclicos: 
 
@@ -450,7 +450,7 @@ Por fim, para montar a nossa base, basta analisar os "vértices" com grau de ent
 - Uma base com apenas um vértice é chamada de **raiz**. 
 - Uma antibase com apenas um vértice é chamada de **antiraiz**. 
 
-<img src="images/img_26.png" width="700">
+<img src="images/img_26.png" width="600">
 
 ---
 
@@ -475,7 +475,7 @@ Essa ordenação pode ser usada na vida real para várias coisas, dentre elas:
 
 A **ordenação topológica** é sequencial, atuando apenas onde não tem ciclos. Em grupos com ações paralelas, a ordem dos vértices não importa. 
 
-<img src="images/img_27.png" width="800">
+<img src="images/img_27.png" width="500">
 
 --- 
 
