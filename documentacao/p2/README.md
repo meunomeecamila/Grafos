@@ -52,7 +52,19 @@ Mas, e como fazer para grafos cíclicos com pesos positivos e negativos?
 
 ### Grafos cíclicos, com pesos positivos e negativos e ciclos positivos 
 
+Em alguns casos, o algoritmo de Djikstra não irá conseguir resolver, pois quando se trata de pesos negativos, ele nem sempre funciona. Isso porque djikstra não visita necessariamente todas as arestas do grafo. 
 
+Então, para resolver esse caso em específico, temos algumas soluções: 
+
+**Solução 01 -> Permutação**
+Permutar todos os caminhos possíveis usando permutação de vértices. Funciona, mas a complexidade seria muito ruim. 
+
+**Solução 02 -> Repetir arestas**
+Na iteração x, todos os vértices com x arestas do v inicial já foram atingidos.   
+O algoritmo para quando não houver nenhuma alteração de uma iteração para outra. Isso significa que o tamanho do maior caminho é o valor da última iteração e todos os valores já foram devidamente corrigidos.    
+Com essa solução, verificamos mais de uma vez a mesma aresta, mas é bem melhor do que resolver com permutação.   
+
+Veja a seguir alguns exemplos:   
 
 ---
 
