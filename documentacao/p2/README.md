@@ -1,4 +1,4 @@
-# 🕸️ Grafos -> Prova 01
+# 🕸️ Grafos -> Prova 02
 
 ## Observações 
 - A definição utilizada nesse documento é a do professor Silvio.
