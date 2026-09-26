@@ -45,9 +45,45 @@ public int dijkstra(List<List<Aresta>> grafo, int origem, int destino) {
 **Obs 02:** Não é possível **conceitualmente** encontrar o menor caminho em grafos cíclicos com pesos negativos. Isso porque, como cada iteração e volta no ciclo diminui mais o peso, ficaria - infinito. É um problema conceitual.   
 
 ### Adaptação 
-Podemos adaptar o algoritmo de djikstra para que ele percorra todas as arestas, mesmo após chegar no vértice destino. Assim, não seria mais djikstra, mas funcionaria para acíclicos positivos, negativos e cíclicos com pesos positivos e negativos, mas sem ciclos negativos.   
+Podemos adaptar o algoritmo de djikstra para que ele percorra todas as arestas, mesmo após chegar no vértice destino. Assim, não seria mais djikstra, mas funcionaria para acíclicos positivos, negativos e cíclicos com pesos positivos.   
 **Nada funciona para cíclicos com ciclos negativos**
+
+Mas, e como fazer para grafos cíclicos com pesos positivos e negativos?   
+
+### Grafos cíclicos, com pesos positivos e negativos e ciclos positivos 
+
+
 
 ---
 
 ## Domínio e Funções 
+
+Dado: F: A -> B   
+
+- Chamamos de **domínio** de onde a função está vindo (A)
+- Chamamos de **contradomínio** para onde está indo (B)
+
+Para onde a função está indo é chamada de **imagem** caso todos os elementos de A tenham sido mapeados em B.   
+
+### Função total vs parcial 
+Chamamos de **função total** quando todos os elementos do meu domínio são mapeados no meu contradomínio. Na **função parcial**, alguns elementos do domínio não são mapeados no contradomínio.   
+
+W:E -> [1,|E|] é uma função total pois todas as arestas são mapeadas, de acordo com a ordem (quantidade total de arestas).    
+
+### Injetora vs Sobrejetora vs Bijetora 
+
+- **Função Injetora:** Cada elemento do contradomínio recebe no máximo uma ligação. Valores diferentes de x sempre geram resultados diferentes de y. Podem sobrar elementos no conjunto de chegada sem nenhum correspondente, mas nenhum valor de y será resultado de dois valores diferentes de x.
+
+W:E -> [1,|E|] ou W:E -> Z+ não são funcões com garantia de que são injetoras, porque nesses casos, arestas diferentes podem ser mapeadas com o mesmo valor.    
+
+No brasileirão ou nas eleicões, por exemplo, temos funções injetoras. No pior dos casos, o brasileirão desempata por sorteio, e as eleições, por idade.   
+
+- **Função Sobrejetora:** Todo elemento do contradomínio recebe pelo menos uma ligação. Nenhum elemento sobra sozinho no conjunto de chegada (ou seja, a imagem é igual ao contradomínio), mas um mesmo valor de y pode ser gerado por mais de um valor de x.
+
+Nessas funções, conseguimos trazer de volta (auditoria). Isso faz com que elas sejam explicáveis. Árvores de decisão, por exemplo, podem ser mapeadas de volta. Se eu tenho elementos que eu não mapeio, não consigo trazer de volta.   
+
+- **Função Bijetora:** É a combinação de ambas. Cada elemento do contradomínio recebe exatamente uma ligação. Não sobra nenhum elemento sem par no conjunto de chegada, e não há resultados repetidos. É um pareamento perfeito e exclusivo de um-para-um entre os dois conjuntos.
+
+**Obs:** É importante ressaltar que além de pesos em arestas, também podemos ter pesos em vértices. Eles podem ser restrições, limites, importância, prioridade, capacidade máxima, entre outros. 
+
+---
