@@ -84,7 +84,7 @@ W:E -> [1,|E|] é uma função total pois todas as arestas são mapeadas, de aco
 
 ### Injetora vs Sobrejetora vs Bijetora 
 
-- **Função Injetora:** Cada elemento do contradomínio recebe no máximo uma ligação. Valores diferentes de x sempre geram resultados diferentes de y. Podem sobrar elementos no conjunto de chegada sem nenhum correspondente, mas nenhum valor de y será resultado de dois valores diferentes de x.
+- **Função Injetora:** Cada elemento do contradomínio recebe no máximo uma ligação. Valores diferentes de x sempre geram resultados diferentes de y. Podem sobrar elementos no conjunto de chegada (contradomínio) sem nenhum correspondente, mas nenhum valor de y será resultado de dois valores diferentes de x.
 
 W:E -> [1,|E|] ou W:E -> Z+ não são funcões com garantia de que são injetoras, porque nesses casos, arestas diferentes podem ser mapeadas com o mesmo valor.    
 
@@ -99,3 +99,28 @@ Nessas funções, conseguimos trazer de volta (auditoria). Isso faz com que elas
 **Obs:** É importante ressaltar que além de pesos em arestas, também podemos ter pesos em vértices. Eles podem ser restrições, limites, importância, prioridade, capacidade máxima, entre outros. 
 
 ---
+
+## Árvore Geradora Mínima
+Uma **árvore geradora mínima** é um grafo acíclico conexo não-direcionado com a menor soma de pesos possível. Em grafos direcionados, temos o conceito de **arborescência**. Mas é bem mais complexo.     
+
+Tendo uma AGM, conseguimos separar um grafo em K grupos, removendo k-1 arestas. Se quisermos os melhores grupos, podemos começar removendo as arestas de maior peso.     
+
+**Obs:** Também podemos ter uma **árvore geradora máxima**, que é um grafo acíclico conexo não-direcionado com a maior soma de pesos possível.   
+
+Para achar uma AGM, temos diversos métodos. Alguns deles estão listados a seguir: 
+**Obs:** Se for possível repetir pesos de arestas, nem sempre a AGM será única!   
+
+*Algoritmos para achar a AGM:*
+- Prim -> Djikstra sem acúmulo de peso
+- Remoção reversa -> Identificar ciclos e remover arestas de maior peso
+- Kruskal -> Partindo de um grafo nulo, selecionar arestas de menor peso que conectem componentes conexos diferentes 
+
+É importante ressaltar que por mais que Djikstra não funciona para pesos negativos, todos esses algoritmos, incluindo Prim, funcionam. Isso porque não há *acúmulo de pesos*.    
+
+---
+
+## Grafos Eulerianos
+Grafo em que é possível caminhar por todas as arestas uma única vez e voltar para a origem (ciclo euleriano). Caso não seja possível voltar para a origem, mas seja possível caminhar por todas as arestas uma única vez, chamamos de grafo semi-euleriano (caminho euleriano). 
+
+### Tabela de comparação
+
