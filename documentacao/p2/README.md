@@ -124,3 +124,20 @@ Grafo em que é possível caminhar por todas as arestas uma única vez e voltar 
 
 ### Tabela de comparação
 
+| Característica | Grafo Euleriano | Grafo Semi-Euleriano | 
+| :--- | :--- | :--- | 
+| **Definição** | Contém um **ciclo euleriano** (um caminho fechado que passa por todas as arestas exatamente uma vez e retorna ao vértice inicial). | Contém um **caminho euleriano** (um caminho aberto que passa por todas as arestas exatamente uma vez, sem retornar ao ponto de partida). | 
+| **Vértices de Início e Fim** | O vértice inicial e o vértice final **são o mesmo**. | O vértice inicial e o vértice final **são distintos**. | 
+| **Grau dos Vértices** | **Todos** os vértices do grafo possuem **grau par** ($\text{grau}(v) \equiv 0 \pmod 2$). | Exatamente **dois vértices** possuem **grau ímpar** (os demais possuem grau par). | 
+| **Conectividade** | É conexo (desconsiderando vértices isolados com grau 0). | É conexo (desconsiderando vértices isolados com grau 0). | 
+| **Condição de Existência** | Válido se e somente se todos os graus forem pares. | Válido se e somente se houver exatamente dois vértices de grau ímpar. | 
+
+### Algoritmo de Fleury
+Para identificar grafos eulerianos ou semi-eulerianos, usamos o **Algoritmo de Fleury**.   
+Passo a passo:   
+01- Para grafos eulerianos, podemos começar em qualquer vértice. Para grafos semi-eulerianos, devemos *obrigatoriamente* começar por um dos dois vértices de grau ímpar.    
+02- A partir desse vértice, ao escolher a próxima aresta do caminho/ciclo, nunca escolha uma ponte, a não ser que seja a única alternativa.   
+03- Percorra a aresta escolhida, remova do grafo e caso existam vértices isolados, remova também.    
+04- Repita o processo com o novo vértice até que todas as arestas sejam percorridas.   
+
+---
