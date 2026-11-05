@@ -40,6 +40,8 @@ public int dijkstra(List<List<Aresta>> grafo, int origem, int destino) {
 }
 ```
 
+![img01](image.png)
+
 **Obs 01:** O algoritmo de djikstra funciona apenas para PESOS POSITIVOS. Isso inclui grafos acíclicos e grafos cíclicos com ciclos positivos. Ciclos positivos são ciclos que após uma volta completa, tem um valor arrecadado positivo.     
 
 **Obs 02:** Não é possível **conceitualmente** encontrar o menor caminho em grafos cíclicos com pesos negativos. Isso porque, como cada iteração e volta no ciclo diminui mais o peso, ficaria - infinito. É um problema conceitual.   
@@ -101,9 +103,13 @@ Nessas funções, conseguimos trazer de volta (auditoria). Isso faz com que elas
 ---
 
 ## Árvore Geradora Mínima
-Uma **árvore geradora mínima** é um grafo acíclico conexo não-direcionado com a menor soma de pesos possível. Em grafos direcionados, temos o conceito de **arborescência**. Mas é bem mais complexo.     
+Uma **árvore geradora mínima** é um grafo acíclico conexo não-direcionado com a menor soma de pesos possível. Em grafos direcionados, temos o conceito de **arborescência**. Mas é bem mais complexo.  
+
+![img02](image-1.png)
 
 Tendo uma AGM, conseguimos separar um grafo em K grupos, removendo k-1 arestas. Se quisermos os melhores grupos, podemos começar removendo as arestas de maior peso.     
+
+![img03](image-2.png)
 
 **Obs:** Também podemos ter uma **árvore geradora máxima**, que é um grafo acíclico conexo não-direcionado com a maior soma de pesos possível.   
 
@@ -122,6 +128,8 @@ Para achar uma AGM, temos diversos métodos. Alguns deles estão listados a segu
 ## Grafos Eulerianos
 Grafo em que é possível caminhar por todas as arestas uma única vez e voltar para a origem (ciclo euleriano). Caso não seja possível voltar para a origem, mas seja possível caminhar por todas as arestas uma única vez, chamamos de grafo semi-euleriano (caminho euleriano). 
 
+![img04](image-3.png)
+
 ### Tabela de comparação
 
 | Característica | Grafo Euleriano | Grafo Semi-Euleriano | 
@@ -136,8 +144,13 @@ Grafo em que é possível caminhar por todas as arestas uma única vez e voltar 
 Para identificar grafos eulerianos ou semi-eulerianos, usamos o **Algoritmo de Fleury**.   
 Passo a passo:   
 01- Para grafos eulerianos, podemos começar em qualquer vértice. Para grafos semi-eulerianos, devemos *obrigatoriamente* começar por um dos dois vértices de grau ímpar.    
-02- A partir desse vértice, ao escolher a próxima aresta do caminho/ciclo, nunca escolha uma ponte, a não ser que seja a única alternativa.   
+02- A partir desse vértice, ao escolher a próxima aresta do caminho/ciclo, nunca escolha uma **ponte**, a não ser que seja a única alternativa.   
 03- Percorra a aresta escolhida, remova do grafo e caso existam vértices isolados, remova também.    
 04- Repita o processo com o novo vértice até que todas as arestas sejam percorridas.   
+
+**Obs:** Pontes são arestas que conectam dois componentes conexos. Caso elas sejam removidas, 
+o seu grafo ficaria desconexo.   
+
+![img05](image-4.png)
 
 ---
