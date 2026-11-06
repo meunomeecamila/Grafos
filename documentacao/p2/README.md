@@ -148,9 +148,31 @@ Passo a passo:
 03- Percorra a aresta escolhida, remova do grafo e caso existam vértices isolados, remova também.    
 04- Repita o processo com o novo vértice até que todas as arestas sejam percorridas.   
 
-**Obs:** Pontes são arestas que conectam dois componentes conexos. Caso elas sejam removidas, 
-o seu grafo ficaria desconexo.   
+**Obs:** Pontes são arestas que conectam dois componentes conexos. Caso elas sejam removidas, o seu grafo ficaria desconexo (separado em dois componentes conexos). Para ser uma ponte, obrigatoriamente não deve pertencer a um ciclo.  
 
 ![img05](image-4.png)
 
 ---
+
+## Grafos Hamiltonianos 
+São grafos onde há um ciclo hamiltoniano, isso é, ciclo que passa por todos os **vértices** somente uma vez. Não importam as arestas.   
+Caso não seja possível voltar para a origem, mas seja possível caminhar por todos os vértices uma única vez, chamamos de grafo semi-hamiltoniano (caminho hamiltoniano).   
+
+Ao contrário dos grafos eulerianos, que contém todos os vértices com grau par, não há uma característica dos grafos hamiltonianos que os torne fáceis de descobrir. Temos dois teoremas que mostram condições suficientes (todos que tem, são), mas não necessárias (quem não tem, ainda pode ser).   
+
+### Teorema de Dirac
+O grau de todos os vértices deve ser maior ou igual a metade da quantidade de vértices.   
+**Obs:** Se todos os graus atenderem a isso, o grafo é hamiltoniano. Mas, nem todos os grafos hamiltonianos atendem. (Suficiente mas não necessário).    
+
+### Teorema de Ore 
+Se para todo par de vértices não adjacentes u e v, a soma dos seus graus for maior ou igual ao número total de vértices (g(u) + g(v) ≥ n), então o grafo G é hamiltoniano. Também é suficiente, mas não necessária.   
+
+---
+
+## Line Graph
+Dado um grafo G=(V,E) não-direcionado, seu line graph, ou grafo de linha é um grafo cujo vértices são as arestas de G. As arestas de L(G) são formadas por compartilhamento, quando as duas arestas correspondentes em G compartilham um vértice em comum. 
+
+---
+
+Acabou por aqui! :)   
+Mas, você também pode consultar a aba de provações feitas para a p2.   
