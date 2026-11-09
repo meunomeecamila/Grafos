@@ -167,6 +167,11 @@ O grau de todos os vértices deve ser maior ou igual a metade da quantidade de v
 ### Teorema de Ore 
 Se para todo par de vértices não adjacentes u e v, a soma dos seus graus for maior ou igual ao número total de vértices (g(u) + g(v) ≥ n), então o grafo G é hamiltoniano. Também é suficiente, mas não necessária.   
 
+**Obs:**
+O Teorema de Dirac é um caso particular e mais restritivo do Teorema de Ore. Logo, não há casos em que o Dirac se aplica e o Ore não.    
+
+De qualquer forma, é importante lembrar que os dois teoremas são condições suficientes, mas não necessárias.  Isso porque todos os grafos que atendem a essas condições são hamiltonianos, mas nem todos os grafos hamiltonianos atendem a essas condições.    
+
 ---
 
 ## Line Graph
